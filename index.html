@@ -1206,14 +1206,11 @@
     </style>
 </head>
 <body>
-    <!-- Floating Particles -->
     <div id="particles-container"></div>
     
-    <!-- Background Circles -->
     <div class="bg-circle" style="width: 800px; height: 800px; top: -300px; right: -300px;"></div>
     <div class="bg-circle" style="width: 600px; height: 600px; bottom: -200px; left: -200px;"></div>
 
-    <!-- Header -->
     <header>
         <div class="container">
             <nav class="navbar">
@@ -1231,7 +1228,6 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
     <section class="hero">
         <div class="container">
             <div class="hero-content">
@@ -1249,7 +1245,6 @@
         <div class="wave"></div>
     </section>
 
-    <!-- Video Creation Section -->
     <section id="video-creation" class="video-creation">
         <div class="container">
             <div class="section-title">
@@ -1292,14 +1287,12 @@
                         <div class="progress-bar" id="emotion-progress"></div>
                     </div>
                     <div class="emotion-indicator" id="emotion-indicator">
-                        <!-- Emotion items will be added dynamically -->
-                    </div>
+                        </div>
                     <div class="emotion-visualization">
                         <div class="emotion-wave"></div>
                     </div>
                     <div class="tone-tags" id="tone-tags">
-                        <!-- Tone tags will be added dynamically -->
-                    </div>
+                        </div>
                 </div>
                 
                 <button id="submit-btn" class="submit-btn">Create My Dream Video</button>
@@ -1322,7 +1315,6 @@
         </div>
     </section>
 
-    <!-- Premium Section -->
     <section id="premium" class="premium-section">
         <div class="container">
             <div class="section-title">
@@ -1377,7 +1369,6 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-content">
@@ -1430,7 +1421,6 @@
         </div>
     </footer>
 
-    <!-- Loading Overlay -->
     <div class="loading-overlay" id="loading-overlay">
         <div class="loader"></div>
         <div class="loading-text">
@@ -1439,71 +1429,6 @@
         </div>
     </div>
 
-    <!-- Payment Modal -->
-    <div class="modal-overlay" id="payment-modal">
-        <div class="payment-modal">
-            <button class="close-modal" id="close-modal">&times;</button>
-            <div id="payment-content">
-                <h3>Upgrade to Premium</h3>
-                <p>To create videos longer than 1 minute, please upgrade to our premium plan.</p>
-                
-                <div class="payment-options">
-                    <div class="payment-option active" data-plan="dreamer">
-                        <i class="fas fa-crown"></i>
-                        <div class="payment-info">
-                            <h5>Dreamer Plan</h5>
-                            <p>$19/month - Up to 5 minute videos</p>
-                        </div>
-                        <i class="fas fa-check-circle"></i>
-                    </div>
-                    
-                    <div class="payment-option" data-plan="professional">
-                        <i class="fas fa-star"></i>
-                        <div class="payment-info">
-                            <h5>Professional Plan</h5>
-                            <p>$49/month - Up to 10 minute videos</p>
-                        </div>
-                        <i class="fas fa-check-circle"></i>
-                    </div>
-                </div>
-                
-                <div class="payment-form">
-                    <div class="form-group">
-                        <label for="card-name">Name on Card</label>
-                        <input type="text" id="card-name" class="form-control" placeholder="John Doe">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="card-number">Card Number</label>
-                        <input type="text" id="card-number" class="form-control" placeholder="1234 5678 9012 3456">
-                    </div>
-                    
-                    <div class="card-details">
-                        <div class="form-group">
-                            <label for="card-expiry">Expiry Date</label>
-                            <input type="text" id="card-expiry" class="form-control" placeholder="MM/YY">
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="card-cvc">CVC</label>
-                            <input type="text" id="card-cvc" class="form-control" placeholder="123">
-                        </div>
-                    </div>
-                    
-                    <button class="pay-now-btn" id="pay-now-btn">Pay Now & Create Video</button>
-                </div>
-            </div>
-            
-            <div id="confirmation-content" class="confirmation-modal" style="display: none;">
-                <i class="fas fa-check-circle"></i>
-                <h3>Payment Successful!</h3>
-                <p>Thank you for upgrading to Premium. Your video is now being processed with extended duration.</p>
-                <button class="btn btn-primary" id="close-confirmation">Continue</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Notification -->
     <div class="notification" id="notification">
         <i class="fas fa-check-circle"></i>
         <p id="notification-message">Your video is being processed!</p>
@@ -1519,33 +1444,24 @@
                 const particle = document.createElement('div');
                 particle.classList.add('particle');
                 
-                // Random size between 2px and 6px
                 const size = Math.random() * 4 + 2;
                 particle.style.width = `${size}px`;
                 particle.style.height = `${size}px`;
-                
-                // Random position
                 particle.style.left = `${Math.random() * 100}vw`;
                 particle.style.top = `${Math.random() * 100}vh`;
-                
-                // Random animation duration
                 const duration = Math.random() * 20 + 10;
                 particle.style.animationDuration = `${duration}s`;
-                
-                // Random delay
                 particle.style.animationDelay = `${Math.random() * 5}s`;
                 
                 container.appendChild(particle);
             }
         }
         
-        // Initialize the application
         document.addEventListener('DOMContentLoaded', function() {
             createParticles();
             
             // DOM elements
             const dreamText = document.getElementById('dream-text');
-            const backgroundUpload = document.getElementById('background-upload');
             const backgroundFile = document.getElementById('background-file');
             const previewContainer = document.getElementById('preview-container');
             const previewImage = document.getElementById('preview-image');
@@ -1555,44 +1471,20 @@
             const submitBtn = document.getElementById('submit-btn');
             const videoPreview = document.getElementById('video-preview');
             const generatedVideo = document.getElementById('generated-video');
-            const downloadBtn = document.getElementById('download-btn');
-            const shareBtn = document.getElementById('share-btn');
-            const createAnotherBtn = document.getElementById('create-another-btn');
             const loadingOverlay = document.getElementById('loading-overlay');
             const loadingStatus = document.getElementById('loading-status');
-            const toneAnalysis = document.getElementById('tone-analysis');
-            const emotionIndicator = document.getElementById('emotion-indicator');
-            const toneTags = document.getElementById('tone-tags');
-            const emotionProgress = document.getElementById('emotion-progress');
-            const paymentModal = document.getElementById('payment-modal');
-            const closeModal = document.getElementById('close-modal');
-            const payNowBtn = document.getElementById('pay-now-btn');
-            const closeConfirmation = document.getElementById('close-confirmation');
-            const paymentContent = document.getElementById('payment-content');
-            const confirmationContent = document.getElementById('confirmation-content');
             const notification = document.getElementById('notification');
             const notificationMessage = document.getElementById('notification-message');
-            
-            // Emotion icons and colors
-            const emotions = [
-                { name: 'Romantic', icon: 'fas fa-heart', color: '#fd79a8' },
-                { name: 'Happy', icon: 'fas fa-smile', color: '#fdcb6e' },
-                { name: 'Sad', icon: 'fas fa-sad-tear', color: '#74b9ff' },
-                { name: 'Adventurous', icon: 'fas fa-mountain', color: '#00b894' },
-                { name: 'Nostalgic', icon: 'fas fa-hourglass-half', color: '#a29bfe' }
-            ];
             
             // File upload handling
             backgroundFile.addEventListener('change', function(e) {
                 if (e.target.files.length > 0) {
                     const file = e.target.files[0];
                     const reader = new FileReader();
-                    
                     reader.onload = function(event) {
                         previewImage.src = event.target.result;
                         previewContainer.style.display = 'block';
                     };
-                    
                     reader.readAsDataURL(file);
                 }
             });
@@ -1608,250 +1500,78 @@
             videoDuration.addEventListener('input', function() {
                 durationValue.textContent = this.value;
             });
-            
-            // Analyze text for emotions
-            dreamText.addEventListener('input', function() {
-                if (this.value.length > 20) {
-                    analyzeText(this.value);
-                } else {
-                    toneAnalysis.style.display = 'none';
-                }
-            });
-            
-            // Analyze text function
-            function analyzeText(text) {
-                toneAnalysis.style.display = 'block';
-                
-                // Simulate analysis progress
-                let progress = 0;
-                const progressInterval = setInterval(() => {
-                    progress += 5;
-                    emotionProgress.style.width = `${progress}%`;
-                    
-                    if (progress >= 100) {
-                        clearInterval(progressInterval);
-                        displayAnalysisResults(text);
-                    }
-                }, 100);
-            }
-            
-            // Display analysis results
-            function displayAnalysisResults(text) {
-                // Clear previous results
-                emotionIndicator.innerHTML = '';
-                toneTags.innerHTML = '';
-                
-                // Simple text analysis (in a real app, this would use NLP)
-                const lowerText = text.toLowerCase();
-                let detectedEmotions = [];
-                let detectedTones = [];
-                
-                // Detect emotions
-                if (lowerText.includes('love') || lowerText.includes('heart') || lowerText.includes('romantic')) {
-                    detectedEmotions.push(emotions[0]); // Romantic
-                    detectedTones.push('Romantic');
-                }
-                
-                if (lowerText.includes('happy') || lowerText.includes('joy') || lowerText.includes('smile')) {
-                    detectedEmotions.push(emotions[1]); // Happy
-                    detectedTones.push('Joyful');
-                }
-                
-                if (lowerText.includes('sad') || lowerText.includes('cry') || lowerText.includes('miss')) {
-                    detectedEmotions.push(emotions[2]); // Sad
-                    detectedTones.push('Melancholic');
-                }
-                
-                if (lowerText.includes('adventure') || lowerText.includes('travel') || lowerText.includes('explore')) {
-                    detectedEmotions.push(emotions[3]); // Adventurous
-                    detectedTones.push('Adventurous');
-                }
-                
-                if (lowerText.includes('remember') || lowerText.includes('past') || lowerText.includes('old')) {
-                    detectedEmotions.push(emotions[4]); // Nostalgic
-                    detectedTones.push('Nostalgic');
-                }
-                
-                // Default to happy if no emotions detected
-                if (detectedEmotions.length === 0) {
-                    detectedEmotions.push(emotions[1]);
-                    detectedTones.push('Neutral');
-                }
-                
-                // Display emotion indicators
-                emotions.forEach(emotion => {
-                    const isActive = detectedEmotions.some(e => e.name === emotion.name);
-                    const emotionItem = document.createElement('div');
-                    emotionItem.classList.add('emotion-item');
-                    if (isActive) emotionItem.classList.add('active');
-                    
-                    emotionItem.innerHTML = `
-                        <div class="emotion-icon" style="color: ${emotion.color}">
-                            <i class="${emotion.icon}"></i>
-                        </div>
-                        <span class="emotion-label">${emotion.name}</span>
-                    `;
-                    
-                    emotionIndicator.appendChild(emotionItem);
-                });
-                
-                // Display tone tags
-                detectedTones.forEach(tone => {
-                    const tag = document.createElement('span');
-                    tag.classList.add('tone-tag');
-                    tag.textContent = tone;
-                    toneTags.appendChild(tag);
-                });
-            }
-            
-            // Submit form
+
+            // --- MAIN SUBMISSION LOGIC ---
             submitBtn.addEventListener('click', function() {
                 const text = dreamText.value.trim();
-                const duration = parseInt(videoDuration.value);
                 
                 if (!text) {
                     showNotification('Please describe your dream or wish to continue');
                     return;
                 }
                 
-                // Check if duration requires premium
-                if (duration > 60) {
-                    paymentModal.classList.add('active');
-                    return;
-                }
-                
-                createVideo(text, duration);
-            });
-            
-            // Create video function
-            function createVideo(text, duration) {
+                // 1. Show Loading State
                 loadingOverlay.style.display = 'flex';
+                loadingStatus.textContent = "Connecting to AI Core...";
                 submitBtn.disabled = true;
+
+                // 2. Prepare Data
+                const formData = new FormData();
+                formData.append('text', text);
                 
-                // Simulate video creation process
-                const steps = [
-                    'Analyzing your emotions...',
-                    'Designing visual elements...',
-                    'Composing soundtrack...',
-                    'Rendering animation...',
-                    'Finalizing your dream video...'
-                ];
-                
-                let currentStep = 0;
-                const processInterval = setInterval(() => {
-                    loadingStatus.textContent = steps[currentStep];
-                    currentStep++;
-                    
-                    if (currentStep >= steps.length) {
-                        clearInterval(processInterval);
+                if (backgroundFile.files.length > 0) {
+                    formData.append('image', backgroundFile.files[0]);
+                }
+
+                // 3. Send to Python Backend
+                fetch('/generate', {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(response => {
+                    if (!response.ok) {
+                        return response.json().then(err => { throw new Error(err.message || 'Server Error') });
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    if (data.status === 'success') {
+                        loadingStatus.textContent = "Finalizing video...";
+                        
+                        // 4. Success: Show Video
+                        generatedVideo.src = data.video_url;
+                        
                         setTimeout(() => {
                             loadingOverlay.style.display = 'none';
-                            showVideoResult();
-                        }, 1500);
+                            videoPreview.style.display = 'block';
+                            videoPreview.scrollIntoView({ behavior: 'smooth' });
+                            
+                            showNotification(`Dream Generated: ${data.emotion} vibe!`);
+                            submitBtn.disabled = false;
+                            
+                            // Auto-play the video
+                            generatedVideo.play();
+                        }, 1000);
+
+                    } else {
+                        throw new Error(data.message || 'Unknown error');
                     }
-                }, 2000);
-            }
-            
-            // Show video result
-            function showVideoResult() {
-                // In a real app, this would show the actual generated video
-                // For demo, we'll use a placeholder
-                generatedVideo.src = 'https://sample-videos.com/video123/mp4/720/big_buck_bunny_720p_1mb.mp4';
-                videoPreview.style.display = 'block';
-                
-                // Scroll to video
-                setTimeout(() => {
-                    videoPreview.scrollIntoView({ behavior: 'smooth' });
-                }, 300);
-                
-                submitBtn.disabled = false;
-            }
-            
-            // Download video
-            downloadBtn.addEventListener('click', function() {
-                showNotification('Video download started!');
-                // In a real app, this would trigger the actual download
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    loadingOverlay.style.display = 'none';
+                    showNotification(`Error: ${error.message}`);
+                    submitBtn.disabled = false;
+                });
             });
             
-            // Share video
-            shareBtn.addEventListener('click', function() {
-                showNotification('Share options displayed');
-                // In a real app, this would open share dialog
-            });
-            
-            // Create another video
-            createAnotherBtn.addEventListener('click', function() {
-                videoPreview.style.display = 'none';
-                dreamText.value = '';
-                backgroundFile.value = '';
-                previewContainer.style.display = 'none';
-                videoDuration.value = 15;
-                durationValue.textContent = '15';
-                toneAnalysis.style.display = 'none';
-                
-                // Scroll to form
-                setTimeout(() => {
-                    document.getElementById('video-creation').scrollIntoView({ behavior: 'smooth' });
-                }, 300);
-            });
-            
-            // Payment modal
-            closeModal.addEventListener('click', function() {
-                paymentModal.classList.remove('active');
-            });
-            
-            // Pay now button
-            payNowBtn.addEventListener('click', function() {
-                // Simulate payment processing
-                paymentContent.style.display = 'none';
-                confirmationContent.style.display = 'block';
-                
-                // In a real app, this would process actual payment
-                setTimeout(() => {
-                    paymentModal.classList.remove('active');
-                    paymentContent.style.display = 'block';
-                    confirmationContent.style.display = 'none';
-                    
-                    // Create the video after payment
-                    createVideo(dreamText.value.trim(), parseInt(videoDuration.value));
-                }, 3000);
-            });
-            
-            // Close confirmation
-            closeConfirmation.addEventListener('click', function() {
-                paymentModal.classList.remove('active');
-                paymentContent.style.display = 'block';
-                confirmationContent.style.display = 'none';
-            });
-            
-            // Show notification
             function showNotification(message) {
                 notificationMessage.textContent = message;
                 notification.classList.add('show');
-                
                 setTimeout(() => {
                     notification.classList.remove('show');
-                }, 3000);
+                }, 4000);
             }
-            
-            // Close modal when clicking outside
-            paymentModal.addEventListener('click', function(e) {
-                if (e.target === paymentModal) {
-                    paymentModal.classList.remove('active');
-                    paymentContent.style.display = 'block';
-                    confirmationContent.style.display = 'none';
-                }
-            });
-            
-            // Payment option selection
-            document.querySelectorAll('.payment-option').forEach(option => {
-                option.addEventListener('click', function() {
-                    document.querySelectorAll('.payment-option').forEach(opt => {
-                        opt.classList.remove('active');
-                    });
-                    this.classList.add('active');
-                });
-            });
         });
     </script>
 </body>
