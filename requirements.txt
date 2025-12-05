@@ -1,0 +1,5 @@
+Flask
+huggingface_hub
+gradio_client
+Pillow
+python-dotenv
